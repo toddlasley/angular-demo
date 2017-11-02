@@ -11,6 +11,6 @@ export class AppComponent {
   pokemon = null;
 
   ngOnInit() {
-    
+    this.pokemon = 
   }
 }
