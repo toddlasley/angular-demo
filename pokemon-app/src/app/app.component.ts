@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Pokemon } from '../models/pokemon';
+import { PokemonService } from '../services/pokemon.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,9 @@ export class AppComponent {
   title = 'app';
   pokemon = null;
 
+  constructor(private pokemonService: PokemonService){}
+
   ngOnInit() {
-    this.pokemon = 
+    this.pokemon = this.pokemonService.getPokemon();
   }
 }
