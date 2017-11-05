@@ -9,11 +9,12 @@ import { PokemonService } from '../services/pokemon.service';
 })
 export class AppComponent {
   title = 'app';
-  pokemon = null;
+  pokemon: Pokemon[];
 
   constructor(private pokemonService: PokemonService){}
 
   ngOnInit() {
-    this.pokemon = this.pokemonService.getPokemon();
+    this.pokemonService.getPokemon()
+      .subscribe(result => this.pokemon = result);
   }
 }
