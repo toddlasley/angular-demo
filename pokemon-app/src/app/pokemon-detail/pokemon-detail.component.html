@@ -1,3 +1,4 @@
-<p>
-  pokemon-detail works!
-</p>
+<div class="pokemon-detail" [@openClose]="stateExpression">
+    {{pokemon.description}}
+</div>
+<button class="toggle-info-btn" (click)="toggleOpenClose()">More</button>

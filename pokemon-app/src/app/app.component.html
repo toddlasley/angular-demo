@@ -4,11 +4,9 @@
     {{title}}
   </h1>
 
-  <div class="pokemon-container" *ngFor="let p of pokemon" (click)="toggleOpenClose()" >
+  <div class="pokemon-container" *ngFor="let p of pokemon" >
     {{p.name}}
-    <div [@openClose]="stateExpression">
-      {{p.description}}
-    </div>
+    <app-pokemon-detail [pokemon]="p"></app-pokemon-detail>
   </div>
 </div>
 
