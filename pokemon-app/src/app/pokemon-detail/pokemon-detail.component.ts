@@ -19,8 +19,10 @@ export class PokemonDetailComponent {
   stateExpression: string;
   @Input() pokemon: Pokemon;
 
-  constructor() { 
-    this.stateExpression = 'closed'
+  constructor() { }
+
+  ngOnInit() {
+    this.stateExpression = 'closed';
   }
 
   toggleOpenClose() {
