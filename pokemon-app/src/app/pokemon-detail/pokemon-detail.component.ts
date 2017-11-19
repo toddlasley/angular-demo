@@ -17,19 +17,23 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 })
 export class PokemonDetailComponent {
   stateExpression: string;
+  expandBtnLbl: string;  
   @Input() pokemon: Pokemon;
 
   constructor() { }
 
   ngOnInit() {
     this.stateExpression = 'closed';
+    this.expandBtnLbl = 'More';
   }
 
   toggleOpenClose() {
     if (this.stateExpression == 'closed') {
       this.stateExpression = 'opened';
+      this.expandBtnLbl = 'Less';
     } else {
       this.stateExpression = 'closed';
+      this.expandBtnLbl = 'More';
     }
   }
 }

@@ -1,4 +1,14 @@
-<div class="pokemon-detail" [@openClose]="stateExpression">
-    {{pokemon.description}}
+<div class="pokemon-detail" [@openClose]="stateExpression">    
+    <h6>Description:</h6>
+    <p>{{pokemon.description}}</p>
+    <h6 *ngIf="pokemon.type.length > 1">Types:</h6>
+    <h6 *ngIf="pokemon.type.length == 1">Type:</h6>
+    <ul>
+        <li *ngFor="let t of pokemon.type">{{t}}</li>
+    </ul>
+    <h6>Height:</h6>
+    {{(pokemon.height - (pokemon.height % 12))/12}}' {{pokemon.height % 12}}"
+    <h6>Weight:</h6>
+    {{pokemon.weight}} lbs
 </div>
-<button class="toggle-info-btn" (click)="toggleOpenClose()">More</button>
+<button class="toggle-info-btn btn btn-primary" (click)="toggleOpenClose()">{{expandBtnLbl}}</button>

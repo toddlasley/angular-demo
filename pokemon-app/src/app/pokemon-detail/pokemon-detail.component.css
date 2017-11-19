@@ -4,4 +4,11 @@
 
 .toggle-info-btn {
     display: block;
+    background-color: #ad1c1c;
+    border-color: #ad1c1c;
+}
+
+.toggle-info-btn:active,
+.toggle-info-btn:focus {
+    box-shadow: none;
 }
