@@ -10,5 +10,6 @@
     {{(pokemon.height - (pokemon.height % 12))/12}}' {{pokemon.height % 12}}"
     <h6>Weight:</h6>
     {{pokemon.weight}} lbs
+    <button (click)="deletePokemon()">Delete</button>
 </div>
 <button class="toggle-info-btn btn btn-primary" (click)="toggleOpenClose()">{{expandBtnLbl}}</button>

@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Pokemon } from '../../models/pokemon';
+import { PokemonService } from '../../services/pokemon.service';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 
 @Component({
@@ -20,7 +21,7 @@ export class PokemonDetailComponent {
   expandBtnLbl: string;  
   @Input() pokemon: Pokemon;
 
-  constructor() { }
+  constructor(private pokemonService: PokemonService) { }
 
   ngOnInit() {
     this.stateExpression = 'closed';
@@ -35,5 +36,10 @@ export class PokemonDetailComponent {
       this.stateExpression = 'closed';
       this.expandBtnLbl = 'More';
     }
+  }
+
+  deletePokemon() {
+    console.log('click');
+    this.pokemonService.deletePokemon(this.pokemon._id).subscribe(result => result);
   }
 }
