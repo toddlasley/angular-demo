@@ -3,11 +3,10 @@ import { Pokemon } from '../models/pokemon';
 import { PokemonService } from '../services/pokemon.service';
 
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']  
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'Pokemon App';
@@ -18,5 +17,9 @@ export class AppComponent {
   ngOnInit() {
     this.pokemonService.getPokemon()
       .subscribe(result => this.pokemon = result);
-  }  
+  }
+
+  onDeleted(pokemon: Pokemon){
+    this.pokemon.splice(this.pokemon.indexOf(pokemon), 1);
+  }
 }

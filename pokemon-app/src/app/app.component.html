@@ -4,9 +4,10 @@
     {{title}}
   </h1>
 
-  <div class="pokemon-container" *ngFor="let p of pokemon" >
-    <h4>{{p.name}}</h4>
-    <app-pokemon-detail [pokemon]="p"></app-pokemon-detail>
+  <div class="pokemon-container" *ngFor="let p of pokemon">    
+    <app-pokemon-detail [pokemon]="p"
+      (deleted)="onDeleted($event)">
+    </app-pokemon-detail>    
   </div>
 </div>
 

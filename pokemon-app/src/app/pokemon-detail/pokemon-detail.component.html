@@ -1,15 +1,20 @@
-<div class="pokemon-detail" [@openClose]="stateExpression">    
-    <h6>Description:</h6>
-    <p>{{pokemon.description}}</p>
-    <h6 *ngIf="pokemon.type.length > 1">Types:</h6>
-    <h6 *ngIf="pokemon.type.length == 1">Type:</h6>
-    <ul>
-        <li *ngFor="let t of pokemon.type">{{t}}</li>
-    </ul>
-    <h6>Height:</h6>
-    {{(pokemon.height - (pokemon.height % 12))/12}}' {{pokemon.height % 12}}"
-    <h6>Weight:</h6>
-    {{pokemon.weight}} lbs
-    <button (click)="deletePokemon()">Delete</button>
+<div class="pokemon-box"
+    [@delete]="deletedExpression"
+    (@delete.done)="deleteDone($event)">
+    <button class="delete-btn btn btn-primary" (click)="deletePokemon(p)">Delete</button>
+    <h4>{{pokemon.name}}</h4>    
+    <div class="pokemon-detail" [@openClose]="stateExpression">        
+        <h6>Description:</h6>
+        <p>{{pokemon.description}}</p>
+        <h6 *ngIf="pokemon.type.length > 1">Types:</h6>
+        <h6 *ngIf="pokemon.type.length == 1">Type:</h6>
+        <ul>
+            <li *ngFor="let t of pokemon.type">{{t}}</li>
+        </ul>
+        <h6>Height:</h6>
+        {{(pokemon.height - (pokemon.height % 12))/12}}' {{pokemon.height % 12}}"
+        <h6>Weight:</h6>
+        {{pokemon.weight}} lbs
+    </div>
+    <button class="toggle-info-btn btn btn-primary" (click)="toggleOpenClose()">{{expandBtnLbl}}</button>
 </div>
-<button class="toggle-info-btn btn btn-primary" (click)="toggleOpenClose()">{{expandBtnLbl}}</button>

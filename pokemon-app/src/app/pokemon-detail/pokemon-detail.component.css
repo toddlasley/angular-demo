@@ -1,11 +1,25 @@
+.pokemon-box {
+    overflow: hidden;
+}
+
 .pokemon-detail {
     overflow: hidden;
+}
+
+.delete-btn {    
+    position: relative;
+    float: right;
+    box-align: center;
 }
 
 .toggle-info-btn {
     display: block;
     background-color: #ad1c1c;
     border-color: #ad1c1c;
+}
+
+.toggle-info-btn:hover {
+    background-color: #8b1616;
 }
 
 .toggle-info-btn:active,
